@@ -10,3 +10,22 @@ Directory description
 
 ### Note
 V10 is added to the master branch without extensive tests. Feel free to report or fix bugs.
+
+
+
+### Errors may face during its compilation:
+It showed the below error during compilation :
+
+>> Compiling croutine.c
+In file included from /usr/include/stdint.h:25:0,
+                 from /usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h:9,
+                 from /home/vsameer1/Downloads/FreeRTOS-Sim-master/Source/include/FreeRTOS.h:91,
+                 from /home/vsameer1/Downloads/FreeRTOS-Sim-master/Source/croutine.c:70:
+/usr/include/features.h:367:25: fatal error: sys/cdefs.h: No such file or directory
+compilation terminated.
+Makefile:127: recipe for target 'obj/croutine.o' failed
+make: *** [obj/croutine.o] Error 1
+
+### Resolved by: 
+Issue is resolved by installing the libraries as shown below: 
+### sudo apt install gcc-multilib g++-multilib
